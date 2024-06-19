@@ -17,6 +17,7 @@ import java.sql.SQLException;
 public class TransferService {
     @Autowired
     private ClientRepository clientRepo;
+    @Autowired
     private ShopKeeperRepository shopKeeperRepo;
 
     public void applyPayment(TransferDTO transfer) throws SQLException, InsufficientBalanceException {
@@ -27,9 +28,13 @@ public class TransferService {
                 () -> new SQLException("ShopKeeper not found")
         );
 
+        System.out.println("client -> "+ client);
+        System.out.println("shopKeeper -> "+ shopKeeper);
+
         if (client.getBalance() < transfer.getAmount()) {
-            String msg = String.format("Insufficient balance for client %s to apply the transaction", client.getName());
-            throw new InsufficientBalanceException(msg);
+            throw new InsufficientBalanceException(
+                    String.format("Insufficient balance for client <%s> to apply the transaction", client.getName())
+            );
         }
 
         client.setBalance(client.getBalance() - transfer.getAmount());

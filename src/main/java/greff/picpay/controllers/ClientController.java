@@ -19,7 +19,7 @@ public class ClientController {
     @Autowired
     private ClientService clientService;
     @Autowired
-    private TransferService transferService
+    private TransferService transferService;
 
     @GetMapping
     public ResponseEntity<List<Client>> getClient() {
@@ -41,12 +41,5 @@ public class ClientController {
     public ResponseEntity<Client> updateClient(@PathVariable Long id, @RequestBody @Valid Client client)
             throws SQLException {
         return ResponseEntity.ok(clientService.updateClient(id, client));
-    }
-
-    @PostMapping("/payment")
-    public ResponseEntity<Void> createPayment(@RequestBody @Valid TransferDTO transfer)
-            throws SQLException {
-        transferService.applyPayment(transfer);
-        return ResponseEntity.ok().build();
     }
 }

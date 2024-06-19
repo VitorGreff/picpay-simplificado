@@ -22,7 +22,8 @@ public class ShopKeeperService {
     }
 
     public ShopKeeper updateShopKeeper(Long id, ShopKeeper shopKeeper) throws SQLException {
-       ShopKeeper newShopKeeper = shopKeeperRepo.findById(id).orElseThrow(() -> new SQLException("ShopKeeper not found"));
+       ShopKeeper newShopKeeper = shopKeeperRepo.findById(id).orElseThrow(
+               () -> new SQLException("ShopKeeper not found"));
        newShopKeeper.setName(shopKeeper.getName());
        newShopKeeper.setCnpj(shopKeeper.getCnpj());
        newShopKeeper.setEmail(shopKeeper.getEmail());
