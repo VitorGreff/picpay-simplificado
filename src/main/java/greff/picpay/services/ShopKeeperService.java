@@ -26,7 +26,7 @@ public class ShopKeeperService {
        newShopKeeper.setName(shopKeeper.getName());
        newShopKeeper.setCnpj(shopKeeper.getCnpj());
        newShopKeeper.setEmail(shopKeeper.getEmail());
-       newShopKeeper.setMoney(shopKeeper.getMoney());
+       newShopKeeper.setBalance(shopKeeper.getBalance());
        return shopKeeperRepo.save(newShopKeeper);
     }
 

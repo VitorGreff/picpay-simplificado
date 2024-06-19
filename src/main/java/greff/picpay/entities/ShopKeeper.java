@@ -24,5 +24,5 @@ public class ShopKeeper implements Serializable {
     @NotNull
     private String email;
     @NotNull
-    private float money;
+    private float balance;
 }

@@ -1,6 +1,8 @@
 package greff.picpay.services;
 
 import greff.picpay.entities.Client;
+import greff.picpay.entities.ShopKeeper;
+import greff.picpay.entities.TransferDTO;
 import greff.picpay.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +28,7 @@ public class ClientService {
        newClient.setName(client.getName());
        newClient.setCpf(client.getCpf());
        newClient.setEmail(client.getEmail());
-       newClient.setMoney(client.getMoney());
+       newClient.setBalance(client.getBalance());
        return clientRepo.save(newClient);
     }
 
