@@ -2,7 +2,7 @@ package greff.picpay.controllers;
 
 import greff.picpay.entities.Client;
 import greff.picpay.services.ClientService;
-import greff.picpay.services.TransferService;
+import greff.picpay.services.TransactionService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +18,7 @@ public class ClientController {
     @Autowired
     private ClientService clientService;
     @Autowired
-    private TransferService transferService;
+    private TransactionService transactionService;
 
     @GetMapping
     public ResponseEntity<List<Client>> getClient() {

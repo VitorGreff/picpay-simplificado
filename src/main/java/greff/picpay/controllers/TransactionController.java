@@ -1,7 +1,7 @@
 package greff.picpay.controllers;
 
-import greff.picpay.entities.TransferDTO;
-import greff.picpay.services.TransferService;
+import greff.picpay.entities.TransactionDTO;
+import greff.picpay.services.TransactionService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,14 +14,14 @@ import java.sql.SQLException;
 
 @Controller
 @RequestMapping("/transfer")
-public class TransferController {
+public class TransactionController {
     @Autowired
-    private TransferService transferService;
+    private TransactionService transactionService;
 
     @PostMapping
-    public ResponseEntity<Void> createPayment(@RequestBody @Valid TransferDTO transfer)
+    public ResponseEntity<Void> createPayment(@RequestBody @Valid TransactionDTO transfer)
             throws SQLException {
-        transferService.applyPayment(transfer);
+        transactionService.applyPayment(transfer);
         return ResponseEntity.ok().build();
     }
 }

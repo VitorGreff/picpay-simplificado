@@ -9,7 +9,7 @@ import lombok.Setter;
 import java.io.Serializable;
 
 @Getter @Setter @AllArgsConstructor
-public class TransferDTO implements Serializable {
+public class TransactionDTO implements Serializable {
     @NotNull
     private Long clientID;
     @NotNull
