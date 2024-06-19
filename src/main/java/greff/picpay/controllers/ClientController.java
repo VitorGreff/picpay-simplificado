@@ -1,7 +1,6 @@
 package greff.picpay.controllers;
 
 import greff.picpay.entities.Client;
-import greff.picpay.entities.TransferDTO;
 import greff.picpay.services.ClientService;
 import greff.picpay.services.TransferService;
 import jakarta.validation.Valid;

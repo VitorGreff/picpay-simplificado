@@ -1,8 +1,6 @@
 package greff.picpay.services;
 
 import greff.picpay.entities.Client;
-import greff.picpay.entities.ShopKeeper;
-import greff.picpay.entities.TransferDTO;
 import greff.picpay.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
